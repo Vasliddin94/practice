@@ -29,14 +29,30 @@ function addItem(e) {
     deleteBtn.classList='btn btn-danger btn-sm float-end delete';
     deleteBtn.appendChild(document.createTextNode('X'));
     li.appendChild(deleteBtn);
-    let checkBtn=document.createElement('checkbox');
-    checkBtn.classList='form-check-input float-end drawover';
+    let checkBtn=document.createElement('button');
+    checkBtn.classList='btn btn-success float-end';
+    checkBtn.type='button';
+    checkBtn.innerHTML='Bajarildi'
     li.appendChild(checkBtn);
+    checkBtn.addEventListener('click', draw)
     let empty=document.getElementById('empty');
     empty.style.display='none';
     let submit=document.getElementById('item').value=''
   }
 
+}
+
+
+function draw(e) {
+  if (e.target.parentElement.classList=='list-group-item') {
+    e.target.parentElement.classList.add('draw1');
+    e.target.style.backgroundColor='red';
+    e.target.innerHTML='Bajarilmadi'
+  }else {
+    e.target.parentElement.classList.remove('draw1');
+    e.target.style.backgroundColor='#198754';
+    e.target.innerHTML='Bajarildi'
+  }
 }
 
 

@@ -1,7 +1,7 @@
 let form=document.getElementById('addForm');
 let itemList=document.getElementById('items');
 let filter=document.getElementById('filter');
-let lenth=itemList.lenth
+let lenth=itemList.lenth;
 console.log(lenth);
 
 //submit event
@@ -11,8 +11,7 @@ form.addEventListener('submit', addItem);
 
 itemList.addEventListener('click', removeItem);
 itemList.addEventListener('click', check);
-
-filter.addEventListener('keyup', filterItems)
+filter.addEventListener('keyup', filterItems);
 
 //add Items
 
@@ -32,19 +31,33 @@ function addItem(e) {
     deleteBtn.classList='btn btn-danger btn-sm float-end delete';
     deleteBtn.appendChild(document.createTextNode('X'));
     li.appendChild(deleteBtn);
-    let checkBtn=document.createElement('checkbox');
-    checkBtn.classList='form-check-input float-end drawover';
+    let checkBtn=document.createElement('button');
+    checkBtn.classList='btn btn-success float-end';
+    checkBtn.type='button';
+    checkBtn.innerHTML='Done'
     li.appendChild(checkBtn);
+    checkBtn.addEventListener('click', draw)
     let empty=document.getElementById('empty');
     empty.style.display='none';
     let submit=document.getElementById('item').value=''
+
   }
 
 }
 
-function filterItem(e) {
-
+function draw(e) {
+  if (e.target.parentElement.classList=='list-group-item') {
+    e.target.parentElement.classList.add('draw1');
+    e.target.style.backgroundColor='red';
+    e.target.innerHTML='Undone'
+  }else {
+    e.target.parentElement.classList.remove('draw1');
+    e.target.style.backgroundColor='#198754';
+    e.target.innerHTML='Done'
+  }
 }
+
+
 
 
 
