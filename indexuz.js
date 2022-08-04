@@ -33,7 +33,8 @@ function addItem(e) {
     checkBtn.classList='form-check-input float-end drawover';
     li.appendChild(checkBtn);
     let empty=document.getElementById('empty');
-    empty.style.display='none'
+    empty.style.display='none';
+    let submit=document.getElementById('item').value=''
   }
 
 }
