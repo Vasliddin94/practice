@@ -1,0 +1,56 @@
+body{
+  background-color: #5C6E58;
+  font-family: 'Permanent Marker', cursive;
+}
+
+#main{
+  background-color: #8AA899;
+  color: #ffffff;
+  font-family: 'Permanent Marker', cursive;
+  margin-top: 15px;
+}
+
+
+#items li{
+  background-color: #C9C9C9;
+  font-family: 'Dancing Script';
+}
+
+.row{
+  background-color: #C39EA0;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+.lang button{
+  border-radius: 5px;
+  float: right;
+  margin-right: 5px;
+  border: 1px solid #3B3939;
+}
+
+.lang button a{
+  text-decoration: none;
+  color: #3B3939;
+}
+
+h1{
+  color: #3B3939;
+}
+
+.drawover{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.drawover:checked #items li{
+  text-decoration-line: line-through;
+}
+
+#empty{
+  list-style: none;
+  font-weight: 700;
+}
